@@ -87,6 +87,34 @@ PYTHON_BIN=./.venv/bin/python OUTPUT_DIR="$PWD" ./manage_tts.sh start --port 169
 - PID：`.tts_server.<port>.pid`
 - 日志：`.tts_server.<port>.log`
 
+### 5.5 推荐启动方式（本机与局域网访问）
+
+推荐使用项目虚拟环境并指定输出目录到当前项目目录：
+
+```bash
+cd /Users/shu/github/Vega
+PYTHON_BIN="$PWD/.venv/bin/python" OUTPUT_DIR="$PWD" ./manage_tts.sh start --port 16931
+```
+
+停止服务：
+
+```bash
+cd /Users/shu/github/Vega
+PYTHON_BIN="$PWD/.venv/bin/python" ./manage_tts.sh stop --port 16931
+```
+
+启动后可访问：
+
+- 本机：`http://127.0.0.1:16931/`
+- Host IP（示例）：`http://10.14.56.138:16931/`
+
+快速验证：
+
+```bash
+curl -I http://127.0.0.1:16931/
+curl http://127.0.0.1:16931/health
+```
+
 ## 6. Web 页面使用
 
 服务启动后访问：
