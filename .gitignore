@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Vega-TTS runtime artifacts
+*.mp3
+.tts_server*.pid
+.tts_server*.log
+Vega-TTS-output/
